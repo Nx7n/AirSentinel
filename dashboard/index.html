@@ -1000,7 +1000,7 @@
             const panel = document.getElementById('threatsPanel');
 
             try {
-                const threats = await api.get('/threats');
+                const threats = (await api.get('/threats')) || [];
 
                 if (threats.length === 0) {
                     panel.innerHTML = '<div class="empty-state">No active threats detected</div>';
